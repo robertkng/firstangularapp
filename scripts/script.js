@@ -3,20 +3,14 @@
 var myApp = angular
               .module("myModule", [])
               .controller("myController", function($scope) {
-                var technologies = [
-                  { name: "JavaScript", likes: 1, dislikes: 2 },
-                  { name: "React", likes: 1, dislikes: 2 },
-                  { name: "Angular", likes: 1, dislikes: 2 }
+                var employees = [
+                  { name: "Ben", gender: 'male', salary: '100000', city: 'New York'},
+                  { name: "Charlie", gender: 'male', salary: '10000', city: 'London'},
+                  { name: "Sara", gender: 'female', salary: '10000', city: 'New Jersey'},
+                  { name: "Betty", gender: 'female', salary: '1000', city: 'New York'},
                 ];
-                $scope.technologies = technologies;
+                $scope.employees = employees;
 
-                $scope.incrementLikes = function (technology) {
-                  technology.likes++;
-                }
-
-                $scope.incrementDislikes = function (technology) {
-                  technology.dislikes++;
-                };
                 });
 
 

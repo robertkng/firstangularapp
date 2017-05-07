@@ -7,24 +7,24 @@
 </head>
 <body>
   <div ng-controller="myController">
+    Search: <input type="text" placeholder="Search employees" ng-model="searchText.city" />
+    <br/>
+    <br/>
     <table>
       <thead>
         <tr>
           <th>Name</th>
-          <th>Likes</th>
-          <th>Dislikes</th>
-          <th>Like/Dislike</th>
+          <th>Gender</th>
+          <th>Salary</th>
+          <th>City</th>
         </tr>
       </thead>
       <tbody>
-        <tr ng-repeat="technology in technologies">
-          <td> {{ technology.name }}</td>
-          <td> {{ technology.likes }}</td>
-          <td> {{ technology.dislikes }}</td>
-          <td>
-            <input type="button" value="Like" ng-click="incrementLikes(technology)">
-            <input type="button" value="Dislike" ng-click="incrementDislikes(technology)">
-          </td>
+        <tr ng-repeat="employee in employees | filter:searchText">
+          <td> {{ employee.name }}</td>
+          <td> {{ employee.gender }}</td>
+          <td> {{ employee.salary }}</td>
+          <td> {{ employee.city }}</td>
         </tr>
       </tbody>
     </table>
